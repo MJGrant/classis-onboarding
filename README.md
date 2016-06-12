@@ -4,11 +4,11 @@ Made with Ember 1.13 and Material Design Lite.
 
 "Classis" is an (imaginary) service that connects people who want to learn something to people who are eager to teach something.
 
-Find and hire a foreign language tutor, a dog trainer, a CPR instructor for their entire office, a piano teacher for their child, a personal trainer, and more.
+Prospective students find and hire a foreign language tutor, a dog trainer, a CPR instructor for their entire office, a piano teacher for their child, a personal trainer, and more.
 
 "Classis Onboarding" focuses on the "joining the service" experience for prospective teachers.
 
-Prospective teachers use this mobile-friendly web-based app to sign up for Classis and list their services for sale. Teachers can set prices based on student type, offer group discounts, set their days of availability, and show off their expertise. 
+Prospective teachers use this mobile-friendly web-based app to sign up for Classis and list their services for sale. Teachers can set prices based on student type, offer group discounts, set their days of availability, and show off their expertise.
 
 ## Prerequisites
 
