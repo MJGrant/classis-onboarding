@@ -1,0 +1,25 @@
+<div class="content-grid mdl-grid">
+
+    <div class="mdl-cell">
+
+        <h2>Location</h2>
+
+        <!-- your place or theirs checkbox -->
+        <p>Your training, group lesson, or tutoring
+        may be at your client's location or your own.</p>
+
+        {{#paper-checkbox checked=clientLocation}}
+        Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
+
+        {{/paper-checkbox}}
+
+        {{#unless clientLocation}}
+        <!-- address entry -->
+        {{paper-input placeholder="Street address" type="text" value=address.street icon="place"}}
+        {{paper-input placeholder="City" type="text" value=address.city}}
+        {{paper-input placeholder="State" type="text" value=address.state}}
+        {{/unless}}
+
+    </div>
+
+</div>
