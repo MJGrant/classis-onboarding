@@ -1,7 +1,14 @@
 # Classis-onboarding
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Made with Ember 1.13 and Material Design Lite.
+
+"Classis" is an (imaginary) service that connects people who want to learn something to people who are eager to teach something.
+
+Find and hire a foreign language tutor, a dog trainer, a CPR instructor for their entire office, a piano teacher for their child, a personal trainer, and more.
+
+"Classis Onboarding" focuses on the "joining the service" experience for prospective teachers.
+
+Prospective teachers use this mobile-friendly web-based app to sign up for Classis and list their services for sale. Teachers can set prices based on student type, offer group discounts, set their days of availability, and show off their expertise. 
 
 ## Prerequisites
 
@@ -50,4 +57,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
