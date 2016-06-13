@@ -1,26 +1,30 @@
-<div class="content-grid mdl-grid">
+{{nav-header pageTitle="Location"}}
 
-    <div class="mdl-cell">
+<main class="mdl-layout__content">
+  <div class="page-content">
 
-        <h2>Location</h2>
+      <!-- your place or theirs checkbox -->
+      <p>Your training, group lesson, or tutoring
+      may be at your client's location or your own.</p>
 
-        <!-- your place or theirs checkbox -->
-        <p>Your training, group lesson, or tutoring
-        may be at your client's location or your own.</p>
+      {{input type="checkbox" checked=clientLocation}}
 
-        {{#paper-checkbox checked=clientLocation}}
-        Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
+      Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
 
-        {{/paper-checkbox}}
+      {{#unless clientLocation}}
 
-        {{#unless clientLocation}}
-        <!-- address entry -->
-        {{paper-input placeholder="Street address" type="text" value=address.street icon="place"}}
-        {{paper-input placeholder="City" type="text" value=address.city}}
-        {{paper-input placeholder="State" type="text" value=address.state}}
-        {{/unless}}
+      <!-- address entry -->
 
 
-    </div>
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">Text...</label>
+        </div>
+      </form>
 
-</div>
+      {{/unless}}
+
+
+  </div>
+</main>

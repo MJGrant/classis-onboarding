@@ -4,7 +4,8 @@ export default Ember.Route.extend({
 
   setupController() {
     this.controller.set('clientLocation', true);
-
   }
+
+
 
 });
