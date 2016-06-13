@@ -1,0 +1,34 @@
+{{!--
+@pageTitle
+
+--}}
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+
+  <!-- user control panel only appears on main page -->
+  {{#if (eq pageTitle "Classis")}}
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+    mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Account</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Username</a>
+        <a class="mdl-navigation__link" href="">Profile</a>
+        <a class="mdl-navigation__link" href="">Settings</a>
+        <a class="mdl-navigation__link" href="">Logout</a>
+      </nav>
+    </div>
+  </div>
+
+  {{else}}
+  <!-- back arrow appears on all other pages -->
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">{{pageTitle}}</span>
+  </div>
+  {{/if}}

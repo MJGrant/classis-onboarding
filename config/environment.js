@@ -6,14 +6,20 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    'g-map': {
+      libraries: ['places', 'geometry'],
+      key: 'your-unique-google-map-api-key',
+      protocol: 'https'
+    },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self' http://fonts.gstatic.com",
+      'script-src': "'self' 'unsafe-inline' code.getmdl.io *.googleapis.com maps.gstatic.com *.google.com 'unsafe-eval'",
+      'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self'",
-      'style-src': "'self' https://code.getmdl.io",
-      'img-src': "'self' data:",
-      'media-src': "'self'"
+      'style-src': "'self' *.googleapis.com code.getmdl.io 'unsafe-inline'",
+      'img-src': "'self' *.gstatic.com *.googleapis.com",
+      'media-src': "'self'",
+      'object-src': "'self'"
     },
     EmberENV: {
       FEATURES: {
