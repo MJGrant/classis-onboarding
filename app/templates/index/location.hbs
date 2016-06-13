@@ -1,29 +1,22 @@
-{{nav-header pageTitle=pageTitle}}
+<!-- your place or theirs checkbox -->
+<p>Your training, group lesson, or tutoring
+may be at your client's location or your own.</p>
 
-<main class="mdl-layout__content">
-  <div class="page-content">
+{{input type="checkbox" checked=clientLocation}}
 
-      <!-- your place or theirs checkbox -->
-      <p>Your training, group lesson, or tutoring
-      may be at your client's location or your own.</p>
+Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
 
-      {{input type="checkbox" checked=clientLocation}}
+{{#unless clientLocation}}
 
-      Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
+<!-- address entry -->
 
-      {{#unless clientLocation}}
-
-      <!-- address entry -->
-
-      <form action="#">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="sample3">
-          <label class="mdl-textfield__label" for="sample3">Text...</label>
-        </div>
-      </form>
-
-      {{/unless}}
-
-
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3">
+    <label class="mdl-textfield__label" for="sample3">Text...</label>
   </div>
-</main>
+</form>
+
+MAP HERE
+
+{{/unless}}
