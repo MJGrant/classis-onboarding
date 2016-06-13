@@ -6,12 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('index', {path: '/'}, function() {
-    this.route('basics');
-    this.route('location');
-    this.route('main');
-  });
-
+  this.route('index');
+  this.route('basics');
+  this.route('location');
+  this.route('main');
 });
 
 export default Router;
