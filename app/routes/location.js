@@ -4,7 +4,8 @@ export default Ember.Route.extend({
 
   setupController() {
     this.controller.set('clientLocation', true);
-    this.controller.set('pageTitle', 'Location');
+    let application = this.controllerFor('application');
+    application.set('pageTitle', 'Location');
   }
 
 

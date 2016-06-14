@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   setupController() {
-    this.controller.set('pageTitle', 'Main');
+    let application = this.controllerFor('application');
+    application.set('pageTitle', 'Classis');
   }
 
 });
