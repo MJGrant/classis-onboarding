@@ -5,42 +5,89 @@ Passed in parameters:
 
 --}}
 
-  <!-- user control panel only appears on main page -->
-  {{#if (eq pageTitle "Classis")}}
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-      mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <div class="mdl-layout-spacer">{{pageTitle}}</div>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Account</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Username</a>
-          <a class="mdl-navigation__link" href="">Profile</a>
-          <a class="mdl-navigation__link" href="">Settings</a>
-          <a class="mdl-navigation__link" href="">Logout</a>
-        </nav>
-      </div>
+    {{#unless (eq pageTitle "Classis")}}
+      <button class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon" onclick="history.go(-1);">
+        <i class="material-icons">arrow_back</i>
+      </button>
+    {{/unless}}
+
+    <div class="mdl-layout__header-row">  
+
+      <!-- Title -->
+      <span class="mdl-layout-title">{{pageTitle}}</span>
+
+      <!-- Add spacer, to align navigation dots to the right -->
+      <div class="mdl-layout-spacer"></div>
+
+      <!-- Right aligned menu below button -->
+      <button id="demo-menu-lower-right"
+            class="mdl-button mdl-js-button mdl-button--icon">
+      <i class="material-icons">more_vert</i>
+      </button>
+
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-right">
+      <li class="mdl-menu__item">Username</li>
+      <li class="mdl-menu__item">Profile</li>
+      <li disabled class="mdl-menu__item">Settings</li>
+      <li class="mdl-menu__item">Log out</li>
+      </ul>
+
     </div>
+  </header>
+
+</div>
+
+
+
+
+{{!--
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+
+
+
+  <!-- user control panel only appears on main page -->
+
+    <header class="mdl-layout__header">
+
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer">{{pageTitle}}</div>
+      </div>
+
+    </header>
+
+    <!-- user account drawer (only show on main page)-->
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Account</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Username</a>
+        <a class="mdl-navigation__link" href="">Profile</a>
+        <a class="mdl-navigation__link" href="">Settings</a>
+        <a class="mdl-navigation__link" href="">Logout</a>
+      </nav>
+    </div>
+
 
   {{else}}
 
-    <!-- back arrow appears on all other pages -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-      mdl-layout--fixed-header">
+      <!-- back arrow appears on all other pages -->
       <header class="mdl-layout__header">
-        <!-- back arrow -->
+        <!-- back arrow icon -->
         <button class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon" onclick="history.go(-1);">
           <i class="material-icons">arrow_back</i>
         </button>
+
         <!-- page title -->
         <div class="mdl-layout__header-row">
           <div class="mdl-layout-spacer">{{pageTitle}}</div>
         </div>
       </header>
-    </div>
 
   {{/if}}
+
+</div>
+--}}
