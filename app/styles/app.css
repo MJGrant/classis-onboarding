@@ -1,0 +1,16 @@
+.photo-upload-empty {
+  height:150px;
+  width:100%;
+  background-color:#efefef;
+  color:#8e8e8e;
+  text-align:center;
+}
+
+.mdl-button--floating-action {
+  bottom:45px;
+  margin-bottom:100px;
+  padding-top:24px;
+  position:fixed;
+  right:24px;
+  z-index:998;
+}

@@ -1,13 +1,24 @@
 <!-- basics page -->
 
 <!-- photo upload -->
-Basics stuff goes here.
+<div class="photo-upload-empty">
+  <h3>Choose a photo</h3>
+</div>
+
 {{button-round icon="local_see"}}
 
-<!-- title -->
-Title input
+<div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+  <!-- title -->
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="title" pattern="[A-Z,a-z, ]*">
+    <label class="mdl-textfield__label" for="title">Title</label>
+    <span class="mdl-textfield__error">Letters and spaces only</span>
+  </div>
 
-<!-- longer description -->
-----------------------------------
-Long description goes here
-----------------------------------
+  <!-- longer description -->
+  <div class="mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text" rows="4" maxrows="6"
+     id="description"></textarea>
+    <label class="mdl-textfield__label" for="schools">Description</label>
+  </div>
+</div>
