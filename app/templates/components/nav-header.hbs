@@ -8,13 +8,17 @@ Passed in parameters:
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
 
-    {{#unless (eq pageTitle "Classis")}}
+    {{#if (eq pageTitle "Classis")}}
+      <div class="mdl-layout-icon mdl-button--icon">
+        <i class="material-icons">looks</i>
+      </div>
+    {{else}}
       <button class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon" onclick="history.go(-1);">
         <i class="material-icons">arrow_back</i>
       </button>
-    {{/unless}}
+    {{/if}}
 
-    <div class="mdl-layout__header-row">  
+    <div class="mdl-layout__header-row">
 
       <!-- Title -->
       <span class="mdl-layout-title">{{pageTitle}}</span>
