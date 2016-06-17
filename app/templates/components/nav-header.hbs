@@ -27,17 +27,28 @@ Passed in parameters:
       <div class="mdl-layout-spacer"></div>
 
       <!-- Right aligned menu below button -->
-      <button id="demo-menu-lower-right"
+      <button id="user-menu"
             class="mdl-button mdl-js-button mdl-button--icon">
       <i class="material-icons">more_vert</i>
       </button>
 
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-        for="demo-menu-lower-right">
-      <li class="mdl-menu__item">Username</li>
-      <li class="mdl-menu__item">Profile</li>
-      <li disabled class="mdl-menu__item">Settings</li>
-      <li class="mdl-menu__item">Log out</li>
+        for="user-menu">
+
+      <li disabled class="mdl-menu__item">
+        {{user-menu-item icon="account_box" text="Username"}}
+      </li>
+
+      <li class="mdl-menu__item">
+        {{user-menu-item icon="school" text="Profile"}}
+      </li>
+
+      <li disabled class="mdl-menu__item">
+        {{user-menu-item icon="settings" text="Settings"}}
+      </li>
+
+      <li class="mdl-menu__item">
+        {{user-menu-item icon="indeterminate_check_box" text="Log out"}}</li>
       </ul>
 
     </div>
