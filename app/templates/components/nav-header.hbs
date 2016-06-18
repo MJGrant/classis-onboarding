@@ -1,7 +1,7 @@
 {{!-- Navigation bar across top of all pages
 
 Passed in parameters:
-@pageTitle
+@pageTitle    - Title of page (route)
 
 --}}
 
@@ -32,6 +32,8 @@ Passed in parameters:
       <i class="material-icons">more_vert</i>
       </button>
 
+
+      <!-- User menu dropdown -->
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
         for="user-menu">
 
@@ -55,54 +57,3 @@ Passed in parameters:
   </header>
 
 </div>
-
-
-
-
-{{!--
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-
-
-
-
-  <!-- user control panel only appears on main page -->
-
-    <header class="mdl-layout__header">
-
-      <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer">{{pageTitle}}</div>
-      </div>
-
-    </header>
-
-    <!-- user account drawer (only show on main page)-->
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Account</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Username</a>
-        <a class="mdl-navigation__link" href="">Profile</a>
-        <a class="mdl-navigation__link" href="">Settings</a>
-        <a class="mdl-navigation__link" href="">Logout</a>
-      </nav>
-    </div>
-
-
-  {{else}}
-
-      <!-- back arrow appears on all other pages -->
-      <header class="mdl-layout__header">
-        <!-- back arrow icon -->
-        <button class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon" onclick="history.go(-1);">
-          <i class="material-icons">arrow_back</i>
-        </button>
-
-        <!-- page title -->
-        <div class="mdl-layout__header-row">
-          <div class="mdl-layout-spacer">{{pageTitle}}</div>
-        </div>
-      </header>
-
-  {{/if}}
-
-</div>
---}}
