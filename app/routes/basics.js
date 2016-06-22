@@ -12,6 +12,7 @@ export default Ember.Route.extend({
 
   actions: {
     transitionToNext(newClass) {
+      console.log("going to location");
       this.replaceWith('location', newClass);
     },
 
@@ -20,13 +21,18 @@ export default Ember.Route.extend({
     },
 
     continue() {
-      console.log("continuing to location");
+      console.log("continuing (making a record)");
       var newClass = this.store.createRecord('class', {
         title: this.controller.get('title'),
         description: this.controller.get('description')
       });
 
-      newClass.save().then(this.transitionToNext).catch(this.failure);
+      newClass.save()
+        .then(() => {
+          console.log("going to location");
+          this.replaceWith('location');
+        })
+        .catch(this.failure);
     }
   }
 
