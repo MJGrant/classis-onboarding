@@ -3,12 +3,14 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model() {
-      this.store.findRecord('class');
+      return this.store.peekAll('class');
   },
-  
-  setupController() {
+
+  setupController(model) {
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Classis');
+
+    this.controller.set('classes', model);
   }
 
 });
