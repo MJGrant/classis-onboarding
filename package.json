@@ -37,6 +37,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-localstorage-adapter": "0.5.5",
+    "ember-radio-button": "1.0.7",
     "ember-truth-helpers": "1.2.0"
   },
   "dependencies": {

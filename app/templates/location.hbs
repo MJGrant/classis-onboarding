@@ -7,24 +7,37 @@ Step 2/6
   <p>Your training, group lesson, or tutoring
   may be at your client's location or your own.</p>
 
-  {{input type="checkbox" checked=clientLocation}}
+    {{#radio-button
+      value="yours"
+      groupValue=clientLocation
+      changed="locationToggled"}}
+      Yours
+      {{/radio-button}}
 
-  Location: {{#if clientLocation}}Theirs{{else}}Yours{{/if}}
+    {{#radio-button
+      value="theirs"
+      groupValue=clientLocation
+      changed="locationToggled"}}
+      Theirs
+    {{/radio-button}}
 
-  {{#unless clientLocation}}
+  {{#if (eq clientLocation "theirs")}}
+    <p>Client must be within <input class="mdl-textfield__input" type="text" id="sample3"> miles of:</p>
+  {{/if}}
 
   <!-- address entry -->
-
   <form action="#">
+    <!-- street -->
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" id="sample3">
-      <label class="mdl-textfield__label" for="sample3">Text...</label>
+      <input class="mdl-textfield__input" type="text" id="input-street">
+      <label class="mdl-textfield__label" for="input-street">Your street</label>
+    </div>
+    <!-- city -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="input-city">
+      <label class="mdl-textfield__label" for="input-city">Your city</label>
     </div>
   </form>
-
-  MAP HERE
-
-  {{/unless}}
 
   {{continue-button destination="index"}}
 
