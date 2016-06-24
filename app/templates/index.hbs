@@ -1,7 +1,7 @@
 <!-- main page of app -->
-<div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-
 {{welcome-card text="Sell your expertise to eager students. Set your own prices and schedule, your place or theirs!"}}
+
+<div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
 
 <!-- display a card for each saved class-->
 {{#each classes as |class|}}
@@ -12,23 +12,6 @@
 {{class-card}}
 
 {{!--
-
-
-    {{#link-to 'basics' class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
-      <i class="material-icons mdl-list__item-icon">add_circle</i>
-      ADD ANOTHER CLASS
-    {{/link-to}}
-
-{{else}}
-
-    {{#link-to 'basics' class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
-      <i class="material-icons mdl-list__item-icon">add_circle</i>
-      ADD YOUR FIRST CLASS
-    {{/link-to}}
-
-{{/if}}
-
-
   <ul>
     <li>{{#link-to 'basics'}}Basics{{/link-to}}</li>
     <li>{{#link-to 'location'}}Location{{/link-to}}</li>
@@ -37,7 +20,6 @@
     <li>Inclusions and Exclusions</li>
     <li>Contact</li>
   </ul>
-
 
 --}}
 
