@@ -32,3 +32,15 @@
 .center-card {
   margin: auto auto;
 }
+
+html {
+  background-color:#e8e8e8;
+}
+
+.welcome-card {
+  background-color:#fff;
+}
+
+.no-padding-left {
+  padding-left:0 !important;
+}
