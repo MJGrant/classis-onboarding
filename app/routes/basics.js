@@ -6,8 +6,8 @@ export default Ember.Route.extend({
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Basics');
 
-    this.controller.set('title', 'default title');
-    this.controller.set('description', 'default description');
+    this.controller.set('title', '');
+    this.controller.set('description', '');
   },
 
   actions: {
@@ -22,7 +22,6 @@ export default Ember.Route.extend({
 
     continue() {
       console.log("continuing (making a record)");
-      console.log("title is:", this.controller.get('title'));
 
       var newClass = this.store.createRecord('class', {
         title: this.controller.get('title'),
@@ -31,8 +30,8 @@ export default Ember.Route.extend({
 
       newClass.save()
         .then(() => {
-          console.log("going to location");
-          this.replaceWith('location');
+          //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
+          this.replaceWith('location', newClass.get('id'));
         })
         .catch(this.failure);
     }

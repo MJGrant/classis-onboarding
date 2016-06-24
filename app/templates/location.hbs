@@ -29,16 +29,16 @@ Step 2/6
   <form action="#">
     <!-- street -->
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" id="input-street">
+      {{input class="mdl-textfield__input" type="text" id="input-street" value=(mut address)}}
       <label class="mdl-textfield__label" for="input-street">Your street</label>
     </div>
     <!-- city -->
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" id="input-city">
+      {{input class="mdl-textfield__input" type="text" id="input-city" value=(mut city)}}
       <label class="mdl-textfield__label" for="input-city">Your city</label>
     </div>
   </form>
 
-  {{continue-button destination="index"}}
+    {{continue-button actionToCall="continue"}}
 
 </div>

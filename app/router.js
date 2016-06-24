@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('basics');
-  this.route('location');
+  this.route('location', {path: 'location/:id'});
   this.route('main');
 });
 
