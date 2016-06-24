@@ -12,6 +12,12 @@ export default Ember.Route.extend({
     application.set('pageTitle', 'Classis');
 
     this.controller.set('classes', model);
+  },
+
+  actions: {
+    addNew() {
+      this.replaceWith('basics');
+    }
   }
 
 });

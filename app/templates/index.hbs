@@ -8,8 +8,11 @@
   {{class-card class=class}}
 {{/each}}
 
-<!-- always display the "add new class" variation of the card -->
-{{class-card}}
+<!-- add a class -->
+<button {{action "addNew"}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+  ADD A CLASS
+</button>
+
 
 {{!--
   <ul>

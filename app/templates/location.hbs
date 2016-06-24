@@ -1,12 +1,12 @@
 <!-- location page -->
-Step 2/6
+{{welcome-card text="Your training, group lesson, or tutoring
+may be at your client's location or your own."}}
 
 <!-- your place or theirs checkbox -->
 <div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
 
-  <p>Your training, group lesson, or tutoring
-  may be at your client's location or your own.</p>
-
+  <div class="edit-card mdl-shadow--2dp">
+    <div class="edit-card-inset">
     {{#radio-button
       value="yours"
       groupValue=clientLocation
@@ -21,24 +21,25 @@ Step 2/6
       Theirs
     {{/radio-button}}
 
-  {{#if (eq clientLocation "theirs")}}
-    <p>Client must be within <input class="mdl-textfield__input" type="text" id="sample3"> miles of:</p>
-  {{/if}}
+    {{#if (eq clientLocation "theirs")}}
+      <p>Client must be within <input class="mdl-textfield__input" type="text" id="sample3"> miles of:</p>
+    {{/if}}
 
-  <!-- address entry -->
-  <form action="#">
-    <!-- street -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      {{input class="mdl-textfield__input" type="text" id="input-street" value=(mut address)}}
-      <label class="mdl-textfield__label" for="input-street">Your street</label>
-    </div>
-    <!-- city -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      {{input class="mdl-textfield__input" type="text" id="input-city" value=(mut city)}}
-      <label class="mdl-textfield__label" for="input-city">Your city</label>
-    </div>
-  </form>
+    <!-- address entry -->
+    <form action="#">
+      <!-- street -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{input class="mdl-textfield__input" type="text" id="input-street" value=(mut address)}}
+        <label class="mdl-textfield__label" for="input-street">Your street</label>
+      </div>
+      <!-- city -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{input class="mdl-textfield__input" type="text" id="input-city" value=(mut city)}}
+        <label class="mdl-textfield__label" for="input-city">Your city</label>
+      </div>
+    </form>
 
     {{continue-button actionToCall="continue"}}
-
+    </div>
+  </div>
 </div>
