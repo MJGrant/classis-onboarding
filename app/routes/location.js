@@ -6,19 +6,17 @@ export default Ember.Route.extend({
   //use peek all because we don't need to re-get it from the server, the local storage has it already
   model(param) {
     if (param.id) {
-      return this.store.peekAll('class').findBy('id', parseInt(param.id));
+      let newClass = this.store.peekRecord('class', param.id);
+      return newClass;
     }
   },
 
-  setupController(model) {
+  setupController(controller, model) {
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Location');
 
-    console.log("saved class came in as:", model);
-
-    var newClass = model;
-
-    console.log("saved class has title:", newClass.get('title'));
+    //put the model on the controller so we can get at it from the actions
+    this.controller.set('newClass', model);
 
     this.controller.set('clientLocation', "yours");
     this.controller.set('address', '');
@@ -29,7 +27,10 @@ export default Ember.Route.extend({
     continue() {
       console.log("continuing (updating the class record)");
 
-      //model.set('clientLocation', this.controller.get('clientLocation'));
+      let newClass = this.controller.get('newClass');
+      newClass.set('clientLocation', this.controller.get('clientLocation'));
+      newClass.set('address', this.controller.get('address'));
+      newClass.set('city', this.controller.get('city'));
 
       //temp: go back to main page
       this.replaceWith('index');
