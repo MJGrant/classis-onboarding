@@ -6,8 +6,8 @@ export default Ember.Route.extend({
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Basics');
 
-    this.controller.set('title', '');
-    this.controller.set('description', '');
+    this.controller.set('title', 'default title');
+    this.controller.set('description', 'default description');
   },
 
   actions: {
@@ -22,6 +22,8 @@ export default Ember.Route.extend({
 
     continue() {
       console.log("continuing (making a record)");
+      console.log("title is:", this.controller.get('title'));
+
       var newClass = this.store.createRecord('class', {
         title: this.controller.get('title'),
         description: this.controller.get('description')
