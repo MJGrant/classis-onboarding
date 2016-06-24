@@ -7,8 +7,8 @@
 
 <!-- each card represents a class the user has set up -->
 {{#if classes}}
-  {{#each class as |class|}}
-    {{class-card}}
+  {{#each classes as |class|}}
+    {{class-card class=class}}
   {{/each}}
 
     {{#link-to 'basics' class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
