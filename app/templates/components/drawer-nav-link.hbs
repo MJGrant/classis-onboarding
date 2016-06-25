@@ -1,0 +1,19 @@
+{{!-- "Pop in" drawer on left of page
+
+Pass in:
+
+- title     text to use for link
+- link      where it goes when clicked
+- status    for toggling checkmark icon
+
+--}}
+
+<a class="mdl-navigation__link" href={{link}}>
+  <!-- todo: this icon changes to represent step's completion -->
+  {{#if (eq status "done")}}
+    <i class="material-icons green">check_circle</i>
+  {{else}}
+    <i class="material-icons">error_outline</i>
+  {{/if}}
+  {{title}}
+</a>

@@ -63,3 +63,5 @@ html {
 .align-right {
   float:right;
 }
+
+.material-icons.green { color: green; }

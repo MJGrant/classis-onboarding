@@ -7,17 +7,6 @@ Passed in parameters:
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
-
-    {{#if (eq pageTitle "Classis")}}
-      <div class="mdl-layout-icon mdl-button--icon">
-        <i class="material-icons">looks</i>
-      </div>
-    {{else}}
-      <button class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon" onclick="history.go(-1);">
-        <i class="material-icons">arrow_back</i>
-      </button>
-    {{/if}}
-
     <div class="mdl-layout__header-row">
 
       <!-- Title -->
@@ -27,33 +16,53 @@ Passed in parameters:
       <div class="mdl-layout-spacer"></div>
 
       <!-- Right aligned menu below button -->
-      <button id="user-menu"
-            class="mdl-button mdl-js-button mdl-button--icon">
+      <button id="user-menu" class="mdl-button mdl-js-button mdl-button--icon">
       <i class="material-icons">more_vert</i>
       </button>
-
 
       <!-- User menu dropdown -->
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
         for="user-menu">
-
       <li disabled class="mdl-menu__item">
         {{user-menu-item icon="account_box" text="Username"}}
       </li>
-
       <li class="mdl-menu__item">
         {{user-menu-item icon="school" text="Profile"}}
       </li>
-
       <li disabled class="mdl-menu__item">
         {{user-menu-item icon="settings" text="Settings"}}
       </li>
-
       <li class="mdl-menu__item">
         {{user-menu-item icon="indeterminate_check_box" text="Log out"}}</li>
       </ul>
 
     </div>
   </header>
+
+  <!-- Progress menu dropdown (left) -->
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">
+      <a class="mdl-navigation__link" href="/">
+        <h4>Classis</h4>
+      </a>
+      <p>Class ID: {{class.id}}</p>
+      <hr/>
+    </span>
+    <nav class="mdl-navigation">
+      <!-- step pages -->
+      {{drawer-nav-link title="Basics" link="/basics" status="done"}}
+      {{drawer-nav-link title="Location" link="/basics" status="notdone"}}
+      {{drawer-nav-link title="Students" link="/basics"}}
+      {{drawer-nav-link title="Pricing" link="/basics"}}
+      {{drawer-nav-link title="Availability Calendar" link="/basics"}}
+
+      <!-- back to main -->
+      <a class="mdl-navigation__link" href="/">
+        <i class="material-icons">arrow_back</i> Back to main
+      </a>
+    </nav>
+  </div>
+
+
 
 </div>
