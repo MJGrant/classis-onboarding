@@ -2,12 +2,32 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  setupController() {
+  queryParams: {
+    id: {refreshModel: true}
+  },
+
+  model(param) {
+    console.log("what's in model param?", param);
+    //if id is present, we're editing an existing class
+    if (param.id) {
+      return this.store.peek('class').findBy(param.id);
+    }
+  },
+
+  setupController(controller, model) {
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Basics');
 
     this.controller.set('title', '');
     this.controller.set('description', '');
+
+    console.log("we have some model stuff:", model);
+
+    //may not need this
+    this.controller.setProperties({
+      queryParams: ['id']
+    });
+
   },
 
   actions: {

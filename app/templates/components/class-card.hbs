@@ -21,7 +21,7 @@ Pick it apart like so:
 
   <div class="mdl-card__actions mdl-card--border">
     <!-- goes to basics, but the text varies whether there are other classes saved -->
-    {{#link-to 'basics' class="mdl-button no-padding-left mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
+    {{#link-to 'basics' (query-params id=class.id) class="mdl-button no-padding-left mdl-button--colored mdl-js-button mdl-js-ripple-effect"}}
         <i class="material-icons mdl-list__item-icon">edit_circle</i>
         EDIT
     {{/link-to}}
