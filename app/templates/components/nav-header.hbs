@@ -1,7 +1,9 @@
 {{!-- Navigation bar across top of all pages
 
-Passed in parameters:
-@pageTitle    - Title of page (route)
+Passed in parameters from application.hbs:
+
+pageTitle    - Title of page (route)
+classId      - ID of currently being edited class
 
 --}}
 
@@ -45,7 +47,7 @@ Passed in parameters:
       <a class="mdl-navigation__link" href="/">
         <h4>Classis</h4>
       </a>
-      <p>Class ID: {{class.id}}</p>
+      <p>Class ID: {{classId}}</p>
       <hr/>
     </span>
     <nav class="mdl-navigation">

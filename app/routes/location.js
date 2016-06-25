@@ -14,6 +14,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Location');
+    application.set('classId', model.id);
 
     //put the model on the controller so we can get at it from the actions
     this.controller.set('newClass', model);
