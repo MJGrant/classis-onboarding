@@ -21,7 +21,9 @@ export default Ember.Route.extend({
     application.set('pageTitle', 'Basics');
 
     if (model) {
-      //we're editing an existing one
+      //we're editing an existing class
+      this.controller.set('existingClass', model);
+      this.controller.set('editingExisting', true);
       this.controller.set('title', model.get('title'));
       this.controller.set('description', model.get('description'));
     } else {
@@ -29,7 +31,6 @@ export default Ember.Route.extend({
       this.controller.set('title', '');
       this.controller.set('description', '');
     }
-
 
     //may not need this
     this.controller.setProperties({
@@ -51,17 +52,33 @@ export default Ember.Route.extend({
     continue() {
       console.log("continuing (making a record)");
 
-      var newClass = this.store.createRecord('class', {
-        title: this.controller.get('title'),
-        description: this.controller.get('description')
-      });
+      //if we're editing, don't make a new record
+      if (this.controller.get('editingExisting')) {
+        console.log("we're editing an existing");
+        let existingClass = this.controller.get('existingClass');
+        existingClass.set('title', this.controller.get('title'));
+        existingClass.set('description', this.controller.get('description'));
 
-      newClass.save()
-        .then(() => {
-          //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
-          this.replaceWith('location', newClass.get('id'));
-        })
-        .catch(this.failure);
+        existingClass.save()
+          .then(() => {
+            //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
+            this.replaceWith('location', existingClass.get('id'));
+          })
+          .catch(this.failure);
+
+      } else {
+        var newClass = this.store.createRecord('class', {
+          title: this.controller.get('title'),
+          description: this.controller.get('description')
+        });
+
+        newClass.save()
+          .then(() => {
+            //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
+            this.replaceWith('location', newClass.get('id'));
+          })
+          .catch(this.failure);
+      }
     }
   }
 
