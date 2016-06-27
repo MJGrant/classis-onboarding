@@ -6,22 +6,30 @@ export default Ember.Route.extend({
     id: {refreshModel: true}
   },
 
-  model(param) {
-    console.log("what's in model param?", param);
+  //queryParams are contained inside transition, which has to be passed as the 2nd paramter to model
+  model(param, transition) {
     //if id is present, we're editing an existing class
-    if (param.id) {
-      return this.store.peek('class').findBy(param.id);
+    let id = transition.queryParams.id;
+    if (id) {
+      return this.store.peekRecord('class', id);
     }
   },
 
   setupController(controller, model) {
+    console.log("model has:", model);
     let application = this.controllerFor('application');
     application.set('pageTitle', 'Basics');
 
-    this.controller.set('title', '');
-    this.controller.set('description', '');
+    if (model) {
+      //we're editing an existing one
+      this.controller.set('title', model.get('title'));
+      this.controller.set('description', model.get('description'));
+    } else {
+      //this is a new class
+      this.controller.set('title', '');
+      this.controller.set('description', '');
+    }
 
-    console.log("we have some model stuff:", model);
 
     //may not need this
     this.controller.setProperties({
