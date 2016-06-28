@@ -32,11 +32,6 @@ export default Ember.Route.extend({
       this.controller.set('description', '');
     }
 
-    //may not need this
-    this.controller.setProperties({
-      queryParams: ['id']
-    });
-
   },
 
   actions: {
@@ -50,34 +45,21 @@ export default Ember.Route.extend({
     },
 
     continue() {
-      console.log("continuing (making a record)");
-
-      //if we're editing, don't make a new record
       if (this.controller.get('editingExisting')) {
-        console.log("we're editing an existing");
         let existingClass = this.controller.get('existingClass');
         existingClass.set('title', this.controller.get('title'));
         existingClass.set('description', this.controller.get('description'));
-
-        existingClass.save()
-          .then(() => {
-            //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
+        existingClass.save().then(() => {
             this.replaceWith('location', existingClass.get('id'));
-          })
-          .catch(this.failure);
-
+        }).catch(this.failure);
       } else {
         var newClass = this.store.createRecord('class', {
           title: this.controller.get('title'),
           description: this.controller.get('description')
         });
-
-        newClass.save()
-          .then(() => {
-            //go to location and pass along the newly created class's id (for now, Ember generates this id randomly)
+        newClass.save().then(() => {
             this.replaceWith('location', newClass.get('id'));
-          })
-          .catch(this.failure);
+          }).catch(this.failure);
       }
     }
   }
