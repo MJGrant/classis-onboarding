@@ -13,16 +13,16 @@
     <div class="edit-card-inset">
       <!-- title -->
       <div class="mdl-textfield mdl-js-textfield">
-        {{input class="mdl-textfield__input" type="text" id="title" value=(mut title) pattern="[A-Z,a-z, ]*"}}
         <label class="mdl-textfield__label" for="title">Title</label>
+        {{input class="mdl-textfield__input" type="text" label="Title" id="title" value=(mut title) pattern="[A-Z,a-z, ]*"}}
         <span class="mdl-textfield__error">Letters and spaces only</span>
       </div>
 
       <!-- longer description -->
       <div class="mdl-textfield mdl-js-textfield">
+        <label class="mdl-textfield__label" for="description">Description</label>
         {{textarea class="mdl-textfield__input" type="text" rows="4" maxrows="6" value=(mut description)
          id="description"}}
-        <label class="mdl-textfield__label" for="schools">Description</label>
       </div>
 
       {{continue-button actionToCall="continue"}}
